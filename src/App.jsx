@@ -1,20 +1,21 @@
 import "./App.css";
 import Dashboard from "./components/dashboard/Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Topnav from "./components/common/Topnav";
-import Sidebar from "./components/common/Sidebar";
+
 import Addcomplaint from "./components/complaints/Addcomplaint";
 import Viewcomplaint from "./components/complaints/Viewcomplaint";
 import Approvedcomplaint from "./components/complaints/Approvedcomplaint";
 import Generatenotice from "./components/generate/Generatenotice";
 import Generateletters from "./components/generate/Generateletters";
 import Generatereports from "./components/generate/Generatereports";
+import Login from "./components/auth/Login";
+import Notfound from "./components/common/Notfound";
+import Navbar from "./components/common/Navbar";
 function App() {
   return (
     <>
       <Router>
-        <Sidebar />
-        <Topnav />
+        <Navbar />
         <Routes>
           <Route
             activeClassName="active_class"
@@ -58,6 +59,13 @@ function App() {
             path="/generate-reports"
             element={<Generatereports />}
           ></Route>
+          <Route
+            activeClassName="active_class"
+            exact
+            path="/login"
+            element={<Login />}
+          ></Route>
+          <Route path="*" element={<Notfound />}></Route>
         </Routes>
       </Router>
     </>
