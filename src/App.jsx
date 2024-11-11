@@ -16,6 +16,7 @@ function App() {
     <>
       <Router>
         <Navbar />
+
         <Routes>
           <Route
             activeClassName="active_class"

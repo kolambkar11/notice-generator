@@ -1,6 +1,7 @@
 {
   "name": "notice-generator",
   "private": true,
+  "proxy": "http://localhost:5000/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -12,6 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
+    "ag-charts-react": "^10.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"
