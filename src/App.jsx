@@ -11,12 +11,12 @@ import Generatereports from "./components/generate/Generatereports";
 import Login from "./components/auth/Login";
 import Notfound from "./components/common/Notfound";
 import Navbar from "./components/common/Navbar";
+import Test from "./components/test/test";
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-
         <Routes>
           <Route
             activeClassName="active_class"
@@ -69,6 +69,7 @@ function App() {
           <Route path="*" element={<Notfound />}></Route>
         </Routes>
       </Router>
+      {/* <Test /> */}
     </>
   );
 }
