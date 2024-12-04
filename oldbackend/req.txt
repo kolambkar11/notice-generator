@@ -1,0 +1,7 @@
+flask_cors
+psycopg2
+sqlalchemy
+alembic
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
