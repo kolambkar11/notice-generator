@@ -3,7 +3,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Addcomplaint from "./components/complaints/Addcomplaint";
-import Viewcomplaint from "./components/complaints/Viewcomplaint";
+import Viewcomplaint from "./components/complaints/Complaints";
 import Approvedcomplaint from "./components/complaints/Approvedcomplaint";
 import Generatenotice from "./components/generate/Generatenotice";
 import Generateletters from "./components/generate/Generateletters";
@@ -11,7 +11,8 @@ import Generatereports from "./components/generate/Generatereports";
 import Login from "./components/auth/Login";
 import Notfound from "./components/common/Notfound";
 import Navbar from "./components/common/Navbar";
-import Test from "./components/test/test";
+import Footer from "./components/common/Footer";
+import Complaints from "./components/complaints/Complaints";
 function App() {
   return (
     <>
@@ -27,13 +28,7 @@ function App() {
           <Route
             activeClassName="active_class"
             exact
-            path="/add-complaint"
-            element={<Addcomplaint />}
-          ></Route>
-          <Route
-            activeClassName="active_class"
-            exact
-            path="/view-complaints"
+            path="/complaint"
             element={<Viewcomplaint />}
           ></Route>
           <Route
@@ -68,8 +63,8 @@ function App() {
           ></Route>
           <Route path="*" element={<Notfound />}></Route>
         </Routes>
+        <Footer />
       </Router>
-      {/* <Test /> */}
     </>
   );
 }

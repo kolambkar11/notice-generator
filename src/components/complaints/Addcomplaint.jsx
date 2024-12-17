@@ -1,6 +1,10 @@
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { PhotoIcon } from "@heroicons/react/24/solid";
+import complaints from "../../data/complaints";
+import { useState } from "react";
 
 export default function Addcomplaint() {
+  let id = complaints.at(-1).idCode;
+  const [idCode, setIdCode] = useState(id);
   return (
     <>
       <div className="lg:pl-72">
@@ -14,7 +18,7 @@ export default function Addcomplaint() {
               </div>
               <div className="border-b border-gray-900/10 p-6">
                 <div className=" grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                  <div className="col-span-full">Serial No: 1002</div>
+                  <div className="col-span-full">Serial No: {idCode + 1}</div>
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="user-name"
@@ -50,16 +54,16 @@ export default function Addcomplaint() {
                   </div>
                   <div className="sm:col-span-2 sm:col-start-1">
                     <label
-                      htmlFor="city"
+                      htmlFor="platform"
                       className="block text-sm/6 font-medium text-gray-900"
                     >
-                      City
+                      Platform
                     </label>
                     <div className="mt-2">
                       <select
-                        id="country"
-                        name="country"
-                        autoComplete="country-name"
+                        id="platform"
+                        name="platform"
+                        autoComplete="platform-name"
                         className="block w-full rounded-md border-0  p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6"
                       >
                         <option>YouTube</option>
@@ -83,10 +87,10 @@ export default function Addcomplaint() {
                         autoComplete="country-name"
                         className="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm/6"
                       >
-                        <option>YouTube</option>
-                        <option>Facebook</option>
-                        <option>Twitter</option>
-                        <option>Instagram</option>
+                        <option>Mumbai CP</option>
+                        <option>Thane CP</option>
+                        <option>Raigad CP</option>
+                        <option>Sindhudurg CP</option>
                       </select>
                     </div>
                   </div>
@@ -101,7 +105,7 @@ export default function Addcomplaint() {
                       <input
                         id="postal-code"
                         name="postal-code"
-                        type="text"
+                        type="number"
                         autoComplete="postal-code"
                         className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                       />

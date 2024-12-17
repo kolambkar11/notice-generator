@@ -1,32 +1,9 @@
 import { NavLink } from "react-router-dom";
-const complaints = [
-  {
-    idCode: "1001",
-    platform: "Instagram",
-    url: "https://www.instagram.com/p/DCCMn4nof3x/",
-    date: "14-10-1996",
-  },
-  {
-    idCode: "1002",
-    platform: "Facebook",
-    url: "https://www.instagram.com/p/DCCMn4nof3x/",
-    date: "14-10-1996",
-  },
-  {
-    idCode: "1003",
-    platform: "Twitter",
-    url: "https://www.instagram.com/p/DCCMn4nof3x/",
-    date: "14-10-1996",
-  },
-  {
-    idCode: "1004",
-    platform: "YouTube",
-    url: "https://www.instagram.com/p/DCCMn4nof3x/",
-    date: "14-10-1996",
-  },
-  // More complaint...
-];
-export default function Viewcomplaint() {
+import complaints from "../../data/complaints";
+import Addcomplaintmodal from "./Addcomplaintmodal";
+// import {} from "@heroicons/react/";
+
+export default function Complaints() {
   return (
     <>
       <div className="lg:pl-72">
@@ -35,14 +12,14 @@ export default function Viewcomplaint() {
             <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
               <div className="px-4 py-5 sm:px-6">
                 <h2 className="text-2xl font-medium text-gray-500">
-                  View Complaint
+                  Complaints
                 </h2>
               </div>
               <div className="border-b border-gray-900/10 p-6">
                 <div className="sm:flex sm:items-center">
                   <div className="sm:flex-auto">
                     <h1 className="text-base font-semibold leading-6 text-gray-900">
-                      View All Complaints
+                      All Complaints
                     </h1>
                     <p className="mt-2 text-sm text-gray-700">
                       A list of all the complaints in your account including
@@ -50,12 +27,7 @@ export default function Viewcomplaint() {
                     </p>
                   </div>
                   <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                    <NavLink
-                      to="/add-complaint"
-                      className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                      Add Complaint
-                    </NavLink>
+                    <Addcomplaintmodal />
                   </div>
                 </div>
                 <div className="mt-8 flow-root">
@@ -70,6 +42,12 @@ export default function Viewcomplaint() {
                                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                               >
                                 ID Code
+                              </th>
+                              <th
+                                scope="col"
+                                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                              >
+                                Username
                               </th>
                               <th
                                 scope="col"
@@ -91,6 +69,12 @@ export default function Viewcomplaint() {
                               </th>
                               <th
                                 scope="col"
+                                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                              >
+                                Status
+                              </th>
+                              <th
+                                scope="col"
                                 className="relative py-3.5 pl-3 pr-4 sm:pr-6"
                               >
                                 <span className="sr-only">Edit</span>
@@ -99,9 +83,12 @@ export default function Viewcomplaint() {
                           </thead>
                           <tbody className="divide-y divide-gray-200 bg-white">
                             {complaints.map((complaint) => (
-                              <tr key={complaint.email}>
+                              <tr key={complaint.idCode}>
                                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                                   {complaint.idCode}
+                                </td>
+                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                  {complaint.userName}
                                 </td>
                                 <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                   {complaint.platform}
@@ -114,6 +101,10 @@ export default function Viewcomplaint() {
                                 </td>
                                 <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                   {complaint.date}
+                                </td>
+
+                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                  {complaint.status}
                                 </td>
                                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                   <a

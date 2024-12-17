@@ -20,15 +20,9 @@ const isActive = "bg-indigo-700 text-white";
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
   {
-    name: "Add Complaints",
-    href: "/add-complaint",
+    name: "Complaints",
+    href: "/complaint",
     icon: UsersIcon,
-    current: false,
-  },
-  {
-    name: "View All Complaints",
-    href: "/view-complaints",
-    icon: FolderIcon,
     current: false,
   },
   {
@@ -38,19 +32,19 @@ const navigation = [
     current: false,
   },
   {
-    name: "Generate Notice",
+    name: "Notice",
     href: "/generate-notice",
     icon: DocumentDuplicateIcon,
     current: false,
   },
   {
-    name: "Generate Reports",
+    name: "Reports",
     href: "/generate-reports",
     icon: ChartPieIcon,
     current: false,
   },
   {
-    name: "Generate Letters",
+    name: "Letters",
     href: "/generate-letters",
     icon: ChartPieIcon,
     current: false,
